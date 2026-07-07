@@ -12,14 +12,14 @@
         <img src="record.png" alt="Record button">
     </button>
     <div class = "qual_name" style="display: block;">
-            <input required= "" type="text" class="input" placeholder = "(Enter Name)" >   
+            <input required= "" type="text" class="input" placeholder = "(Enter Event Name)" >   
         </div>
         
         <input type="text" id="currentDate">
         <ul id="my-list"></ul>
         <script>
             var today = new Date();
-            var date = today.getDate() +'/'+ (today.getMonth() + 1) +'/'+ today.getFullYear();
+            var date = String(today.getDate()).padStart(2, "0") +'/'+ String(today.getMonth() + 1).padStart(2, "0") +'/'+ today.getFullYear();
             document.getElementById("currentDate").value = date;
             const recordButton = document.querySelector('#recordButton');
             let myEvents = ["Start Packing:", "Finish Packing Ice Packs:", "Take Vial from Freezer:", "Finish Packing Everything:", "Place in Loading Dock:"];
