@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vaccine_box.css">
+    <title>Coolbox Qualification Time Logger</title>
+</head>
+
+<body>
+    <button id="recordButton">
+        <img src="record.png" alt="Record button">
+    </button>
+    <div class = "qual_name" style="display: block;">
+            <input required= "" type="text" class="input" placeholder = "(Enter Name)" >   
+        </div>
+        
+        <input type="text" id="currentDate">
+        <ul id="my-list"></ul>
+        <script>
+            var today = new Date();
+            var date = today.getDate() +'/'+ (today.getMonth() + 1) +'/'+ today.getFullYear();
+            document.getElementById("currentDate").value = date;
+            const recordButton = document.querySelector('#recordButton');
+            let myEvents = ["Start Packing:", "Finish Packing Ice Packs:", "Take Vial from Freezer:", "Finish Packing Everything:", "Place in Loading Dock:"];
+            const listContainer = document.getElementById("my-list");
+            listContainer.innerHTML = myEvents.map(item => `<li>${item}</li>`).join("");
+            let currentIndex = 0;
+            recordButton.addEventListener("click", function(){
+                if (currentIndex < myEvents.length) {
+                        var now = new Date();
+                        var time = String(now.getHours()).padStart(2, "0") + ":" + String(now.getMinutes()).padStart(2, "0") + ":" + String(now.getSeconds()).padStart(2, "0");
+
+                        myEvents[currentIndex] = myEvents[currentIndex] + " " + time;
+
+                        listContainer.innerHTML = myEvents.map(item => `<li>${item}</li>`).join("");
+
+                        currentIndex++;}
+            });
+
+        </script>
+
+    </div>
+    
+
+</body>
+</html>

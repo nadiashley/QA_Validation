@@ -1,0 +1,9 @@
+body {
+  margin: 10px;
+}
+
+#recordButton {
+    position: fixed;
+    bottom: 130px;
+    right: 30%;
+}
