@@ -15,7 +15,12 @@ body {
     right: 50px;
 }
 
-#recordButton img, #recordButton2 img {
+#recordButton img {
+    width: 20px;
+    height: 20px;
+}
+
+#recordButton2 img {
     width: 20px;
     height: 20px;
 }
