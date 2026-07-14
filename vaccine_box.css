@@ -6,11 +6,16 @@ body {
 #recordButton {
     position: fixed;
     bottom: 380px;
-    right: 70px;
+    right: 50px;
 }
 
 #recordButton2 {
     position: fixed;
     bottom: 250px;
-    right: 60px;
+    right: 50px;
+}
+
+#recordButton img, #recordButton2 img {
+    width: 20px;
+    height: 20px;
 }
