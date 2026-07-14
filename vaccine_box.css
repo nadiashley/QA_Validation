@@ -5,14 +5,14 @@ body {
 
 #recordButton {
     position: fixed;
-    bottom: 380px;
-    right: 50px;
+    bottom: 400px;
+    right: 30px;
 }
 
 #recordButton2 {
     position: fixed;
-    bottom: 250px;
-    right: 50px;
+    bottom: 280px;
+    right: 30px;
 }
 
 #recordButton img {
