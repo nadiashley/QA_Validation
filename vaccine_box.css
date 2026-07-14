@@ -2,8 +2,15 @@ body {
   margin: 10px;
 }
 
+
 #recordButton {
     position: fixed;
+    bottom: 380px;
+    right: 70px;
+}
+
+#recordButton2 {
+    position: fixed;
     bottom: 250px;
-    right: 30%;
+    right: 60px;
 }

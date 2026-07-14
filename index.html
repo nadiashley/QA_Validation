@@ -9,33 +9,56 @@
 
 <body>
     <button id="recordButton">
-        <img src="record.png" alt="Record button">
+        <img src="record.png" alt="Record Button">
+    </button>
+    <button id="recordButton2">
+        <img src="record.png" alt="Record Button 2">
     </button>
     <div class = "qual_name" style="display: block;">
-            <input required= "" type="text" class="input" placeholder = "(Enter Event Name)" >   
+            <input required= "" type="text" class="input" placeholder = "(Enter Event Name)" size="50" id="eventName">   
         </div>
         
         <input type="text" id="currentDate">
-        <ul id="my-list"></ul>
+        <ul id="my-list1"></ul>
+        <ul id="my-list2"></ul>
         <script>
             var today = new Date();
             var date = String(today.getDate()).padStart(2, "0") +'/'+ String(today.getMonth() + 1).padStart(2, "0") +'/'+ today.getFullYear();
             document.getElementById("currentDate").value = date;
             const recordButton = document.querySelector('#recordButton');
+            const recordButton2 = document.querySelector('#recordButton2');
+
             let myEvents = ["Start Packing:", "Finish Packing Ice Packs:", "Take Vial from Freezer:", "Finish Packing Everything:", "Place in Loading Dock:"];
-            const listContainer = document.getElementById("my-list");
+            let myEvents2 = ["Start Packing:", "Finish Packing Ice Packs:", "Take Vial from Freezer:", "Finish Packing Everything:", "Place in Loading Dock:"];
+            const listContainer = document.getElementById("my-list1");
             listContainer.innerHTML = myEvents.map(item => `<li>${item}</li>`).join("");
+            const listContainer2 = document.getElementById("my-list2");
+            listContainer2.innerHTML = myEvents.map(item => `<li>${item}</li>`).join("");
             let currentIndex = 0;
+
             recordButton.addEventListener("click", function(){
                 if (currentIndex < myEvents.length) {
-                        var now = new Date();
+                        var now = new Date(); //Idk why need a new Date()
                         var time = String(now.getHours()).padStart(2, "0") + ":" + String(now.getMinutes()).padStart(2, "0") + ":" + String(now.getSeconds()).padStart(2, "0");
 
                         myEvents[currentIndex] = myEvents[currentIndex] + " " + time;
 
                         listContainer.innerHTML = myEvents.map(item => `<li>${item}</li>`).join("");
 
-                        currentIndex++;}
+                        currentIndex++;} })
+            
+            let currentIndex2 = 0;
+            recordButton2.addEventListener("click", function(){
+                if (currentIndex < myEvents2.length) {
+                        var now = new Date(); 
+                        var time = String(now.getHours()).padStart(2, "0") + ":" + String(now.getMinutes()).padStart(2, "0") + ":" + String(now.getSeconds()).padStart(2, "0");
+
+                        myEvents2[currentIndex2] = myEvents2[currentIndex2] + " " + time;
+
+                        listContainer2.innerHTML = myEvents2.map(item => `<li>${item}</li>`).join("");
+
+                        currentIndex2++;}
+
             });
 
         </script>
